@@ -113,8 +113,8 @@ it in your application as necessary.
 It is also possible to create a daemonized script quite easily
 using the TweetStream library:
 
-  # The third argument is an optional process name
-  TweetStream::Daemon.new('username','password', 'tracker').track('term1', 'term2') do |status|
+  # The daemon has an optional daemon_options parameter for passing additional parameters to the daemon.
+  TweetStream::Daemon.new('username','password', :app_name => 'tracker').track('term1', 'term2') do |status|
     # do something in the background
   end
   
